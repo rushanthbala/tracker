@@ -1,0 +1,40 @@
+<header id="header" class="header" style="background-color: #f7f7f7">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 d-flex align-items-center">
+        <div class="text-container">
+          <h1 class="h1-large">Lorem ipsum dolor sit amet consectetur</h1>
+          <p class="p-large mt-4 mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+            repellendus!
+          </p>
+          <div
+            style="border-radius: 30px"
+            class="btn btn-outline-primary btn-lg"
+            type="submit"
+          >
+            <a routerLink="login" class="text-decoration-none"> View Tracker</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="image-container">
+          <img
+            class="img-fluid"
+            src="../../assets/landing_img.png"
+            alt="alternative"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="cards">
+  <app-cards content="welcome" title="hiiiii"></app-cards>
+  <app-cards></app-cards>
+  <app-cards></app-cards>
+  <app-cards></app-cards>
+</div>
+<div class="container mt-5">
+  <h1>{{ now | date: "h:mm:ss a" }}</h1>
+</div>

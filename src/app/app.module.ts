@@ -8,7 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CardsComponent } from './cards/cards.component';
 import { AppbarComponent } from './appbar/appbar.component';
-import { ApComponent } from './landing/ap/ap.component';
+import { ReactiveFormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import { ApComponent } from './landing/ap/ap.component';
     LoginComponent,
     SignupComponent,
     CardsComponent,
-    AppbarComponent,
-    ApComponent  
+    AppbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
