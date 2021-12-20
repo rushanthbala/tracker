@@ -1,72 +1,70 @@
-<div class="card form">
-  <form
-    class="card-body mx-auto"
-    [formGroup]="signupForm"
-    (ngSubmit)="onSubmit()"
-  >
-    <img src="../../assets/logo1.jpg" class="" />
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        aria-describedby="emailHelp"
-        name="email"
-        formControlName="email"
-      />
-      <div
-        id="emailHelp"
-        class="form-text"
-        *ngIf="
-          !signupForm.controls['email'].valid &&
-          signupForm.controls['email']?.touched
-        "
-      >
-        Please enter a email
-      </div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        name="password"
-        formControlName="password"
-      />
-      <div
-        id="emailHelp"
-        class="form-text"
-        *ngIf="
-          !signupForm.controls['password'].valid &&
-          signupForm.controls['password']?.touched
-        "
-      >
-        Please enter a password
-      </div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="cPassword"
-        name="cPassword"
-        formControlName="cPassword"
-      />
-      <div
-          id="emailHelp"
-          class="form-text"
-          *ngIf="
-            !signupForm.controls['password'].valid &&
-            signupForm.controls['password']?.touched
-          "
-        >
-          Please enter a password
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+  <title>Singup</title>
+</head>
+<body>
+  <div class="signup-form">
+    
+  <form [formGroup]="form">
+    <h3> SignUp Here</h3>
+
+   <div class="form-group">   
+    <label for="username">Username</label>
+    <input type="text" id="username" formControlName="username" autocomplete="off" class="form-control" pattern="[a-zA-Z ]*">
+    <span class="help-block" *ngIf="form.get('username')?.invalid && form.get('username')?.touched">Username Required!</span>
+  </div>
+  
+  <div class="form-group">   
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password" autocomplete="off" class="form-control">
+    <span class="help-block" *ngIf="form.get('password')?.invalid &&form.get('password')?.touched">Password must contain more than six!</span>
+  </div>
+
+  <div class="form-group">   
+    <label for="Cpassword">Confirm Password</label>
+    <input type="password" id="Cpassword" formControlName="Cpassword" autocomplete="off" class="form-control">
+    <span class="help-block" *ngIf="form.get('Cpassword')?.invalid &&form.get('Cpassword')?.touched">Confirm Password match with Password!</span>
+  </div>
+
+  <div class="form-group">   
+    <label for="phoneno">Phone Number</label>
+    <input type="number" id="phoneno" formControlName="phoneno" autocomplete="off" class="form-control">
+    <span class="help-block" *ngIf="form.get('phoneno')?.invalid &&form.get('phoneno')?.touched">Phone Number Required!</span>
+  </div> <br>
+
+  <div class="form-group">   
+    <label for="gender">Gender</label>&nbsp;&nbsp;&nbsp;
+    <input type="radio" id="gender" formControlName="gender" value="Male" name="gender">Male
+    <input type="radio" id="gender" formControlName="gender" value="Female" name="gender">Female
+  </div><br>
+
+  <div class="form-group">   
+    <label for="Age">Select Age</label>&nbsp;&nbsp;&nbsp;
+    <select  id="age" formControlName="age"  name="age"class="form-control">
+        <option *ngFor="let c of agelist">
+             {{c.age}}
+        </option>
+    </select>
+ </div>  
+
+ <div class="form-group">   
+     <label for="address">Address</label>
+    <textarea id="address" formControlName="address" autocomplete="off" class="form-control" coloms="5" rows="2"></textarea>
+    <span class="help-block" *ngIf="form.get('address')?.invalid &&form.get('address')?.touched">Address Required!</span>
+ </div>
+ <br>
+ <button (click)="clicksub()" type="submit" class="btn btn-success"[disabled]="form.invalid">Singup</button>
+    
+
   </form>
-</div>
+</div>  
+  
+</body>
+</html>

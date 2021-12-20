@@ -8,18 +8,31 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
-  signupForm !:FormGroup
-  ngOnInit(): void {
-    this.signupForm = new FormGroup({
-      email: new FormControl(null, Validators.required),
-      password: new FormControl(null, Validators.required),
-      cPassword: new FormControl(null, Validators.required),
-    })
+  form =new FormGroup({
+    username: new FormControl(null,Validators.required),
+    password:new FormControl(null,[Validators.required,Validators.minLength(6)]),
+    Cpassword:new FormControl(null,[Validators.required,Validators.minLength(6)]),
+    phoneno:new FormControl(null,Validators.required),
+    gender:new FormControl(null,Validators.required),
+    age:new FormControl(null,Validators.required),
+    address:new FormControl(null,Validators.required)
+
+
+  })
+  agelist=[
+    {"age":"choose one"},
+    {"age":"below 30"},
+    {"age":"above 30"}
+  ];
+  clicksub(){
+    console.log(this.form.value);
+    this.form.reset();
   }
-  onSubmit() {
-    console.log(this.signupForm.value);
-    
+
+  constructor() { }
+  
+
+  ngOnInit(): void {
   }
 
 }

@@ -1,0 +1,24 @@
+.form-control.ng-valid.ng-touched{
+    border: 1px solid greenyellow;
+}
+.form-control.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.help-block{
+    color: red;
+}
+
+  .signup-form{
+      max-width: 450px;
+      margin: 0 auto;
+      padding: 30px;
+      font-size: 15px;
+
+  }
+  .signup-form form{
+      color: #6998AB;
+      padding: 30px;
+      border: solid #D8E3E7;
+      
+      
+  }
