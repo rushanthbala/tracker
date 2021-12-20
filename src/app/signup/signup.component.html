@@ -1,1 +1,72 @@
-<p>signup works!</p>
+<div class="card form">
+  <form
+    class="card-body mx-auto"
+    [formGroup]="signupForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <img src="../../assets/logo1.jpg" class="" />
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+        name="email"
+        formControlName="email"
+      />
+      <div
+        id="emailHelp"
+        class="form-text"
+        *ngIf="
+          !signupForm.controls['email'].valid &&
+          signupForm.controls['email']?.touched
+        "
+      >
+        Please enter a email
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        formControlName="password"
+      />
+      <div
+        id="emailHelp"
+        class="form-text"
+        *ngIf="
+          !signupForm.controls['password'].valid &&
+          signupForm.controls['password']?.touched
+        "
+      >
+        Please enter a password
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="cPassword"
+        name="cPassword"
+        formControlName="cPassword"
+      />
+      <div
+          id="emailHelp"
+          class="form-text"
+          *ngIf="
+            !signupForm.controls['password'].valid &&
+            signupForm.controls['password']?.touched
+          "
+        >
+          Please enter a password
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
