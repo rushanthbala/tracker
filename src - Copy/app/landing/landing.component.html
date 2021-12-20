@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img style="width: 60px" src="../assets/logo1.jpg" alt="image" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active fs-4" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4" href="#">About</a>
+        </li>
+      </ul>
+      <div class="btn btn-outline-success" type="submit">
+        <a routerLink="login" class="text-decoration-none"> LOGIN</a>
+      </div>
+      <div class="btn btn-outline-success" type="submit">
+        <a routerLink="signup" class="text-decoration-none m1"> SIGNUP</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+<header id="header" class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 d-flex align-items-center">
+        <div class="text-container">
+          <h1 class="h1-large">Team management mobile application</h1>
+          <p class="p-large">
+            Start getting things done together with your team based on Pavo's
+            revolutionary team management features
+          </p>
+          <div
+            style="border-radius: 30px"
+            class="btn btn-outline-primary btn-lg"
+            type="submit"
+          >
+            <a routerLink="login" class="text-decoration-none"> View Tracker</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="image-container">
+          <img
+            class="img-fluid"
+            src="../../assets/landing_img.png"
+            alt="alternative"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="cards" >
+  <app-cards></app-cards>
+  <app-cards></app-cards>
+  <app-cards></app-cards>
+  <app-cards></app-cards>
+</div>

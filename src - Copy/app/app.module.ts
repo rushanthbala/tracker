@@ -7,8 +7,6 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CardsComponent } from './cards/cards.component';
-import { AppbarComponent } from './appbar/appbar.component';
-import { ApComponent } from './landing/ap/ap.component';
 
 @NgModule({
   declarations: [
@@ -16,9 +14,7 @@ import { ApComponent } from './landing/ap/ap.component';
     LandingComponent,
     LoginComponent,
     SignupComponent,
-    CardsComponent,
-    AppbarComponent,
-    ApComponent  
+    CardsComponent  
   ],
   imports: [
     BrowserModule,

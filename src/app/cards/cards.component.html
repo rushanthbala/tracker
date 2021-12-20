@@ -1,0 +1,25 @@
+<!-- <div class="card" style="width: 18rem; margin: 10px">
+  <img src="../../assets/card-image-1.jpg" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
+    <p class="card-text">
+      {{ content }}
+    </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div> 
+</div>-->
+<div class="cards" >
+  <div *ngFor="let cards of card">
+    <div class="card" style="width: 18rem; margin: 10px">
+    <img src="../../assets/card-image-1.jpg" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{cards.title }}</h5>
+      <p class="card-text">
+        {{ cards.content }}
+        <!-- {{ cards.title }} -->
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+</div>
