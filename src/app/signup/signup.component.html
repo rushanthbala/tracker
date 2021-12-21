@@ -18,13 +18,17 @@
    <div class="form-group">   
     <label for="username">Username</label>
     <input type="text" id="username" formControlName="username" autocomplete="off" class="form-control" pattern="[a-zA-Z ]*">
-    <span class="help-block" *ngIf="form.get('username')?.invalid && form.get('username')?.touched">Username Required!</span>
+    <span class="help-block" *ngIf="form.get('username')?.invalid && form.get('username')?.touched">
+      Username Required!
+    </span>
   </div>
   
   <div class="form-group">   
     <label for="password">Password</label>
     <input type="password" id="password" formControlName="password" autocomplete="off" class="form-control">
-    <span class="help-block" *ngIf="form.get('password')?.invalid &&form.get('password')?.touched">Password must contain more than six!</span>
+    <span class="help-block" *ngIf="form.get('password')?.invalid &&form.get('password')?.touched">
+      Password must contain more than six!
+    </span>
   </div>
 
   <div class="form-group">   
@@ -57,7 +61,9 @@
  <div class="form-group">   
      <label for="address">Address</label>
     <textarea id="address" formControlName="address" autocomplete="off" class="form-control" coloms="5" rows="2"></textarea>
-    <span class="help-block" *ngIf="form.get('address')?.invalid &&form.get('address')?.touched">Address Required!</span>
+    <span class="help-block" *ngIf="form.get('address')?.invalid &&form.get('address')?.touched">
+      Address Required!
+    </span>
  </div>
  <br>
  <button (click)="clicksub()" type="submit" class="btn btn-success"[disabled]="form.invalid">Singup</button>

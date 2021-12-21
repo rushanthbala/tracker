@@ -6,14 +6,15 @@
   >
     <img src="../../assets/logo1.jpg" class="" />
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <label for="exampleInputEmail1" class="form-label">Username</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
         id="email"
         aria-describedby="emailHelp"
         name="email"
         formControlName="email"
+        autocomplete="off"
       />
       <!-- <div id="emailHelp" class="form-text" *ngIf="!loginForm.get('email').valid && !loginForm.get('email').touched ">
         We'll never share your email with anyone else.
@@ -26,7 +27,7 @@
           loginForm.controls['email']?.touched
         "
       >
-        Please enter the ema
+        Please enter the email
       </div>
     </div>
     <div class="mb-3">
@@ -37,6 +38,7 @@
         id="password"
         name="password"
         formControlName="password"
+        autocomplete="off"
       />
       <div
         id="emailHelp"

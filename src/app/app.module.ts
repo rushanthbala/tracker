@@ -9,6 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 import { CardsComponent } from './cards/cards.component';
 import { AppbarComponent } from './appbar/appbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 // import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     SignupComponent,
     CardsComponent,
-    AppbarComponent
+    AppbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
