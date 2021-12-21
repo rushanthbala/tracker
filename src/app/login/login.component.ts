@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     if (isUser) {
       localStorage.setItem('userData', JSON.stringify(isUser));
       localStorage.setItem('isUser', "true");
+      window.location.href = '/'
       this.router.navigate(login);
     }
     console.log(isUser);
