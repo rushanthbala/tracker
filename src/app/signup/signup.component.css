@@ -1,3 +1,6 @@
+h3{
+    text-align:center;
+}
 .form-control.ng-valid.ng-touched{
     border: 1px solid greenyellow;
 }
@@ -22,3 +25,4 @@
       
       
   }
+  
