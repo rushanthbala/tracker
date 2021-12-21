@@ -21,10 +21,11 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.loginForm.value);
-
-  }
-  click() {
     let isUser = this.authUser()
+    if (isUser) {
+      localStorage.setItem('userData', JSON.stringify(isUser));
+      localStorage.setItem('isUser', "true");
+    }
     console.log(isUser);
   }
   authUser() {

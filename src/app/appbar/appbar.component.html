@@ -23,9 +23,16 @@
           <a class="nav-link fs-4" href="#">About</a>
         </li>
       </ul>
-      <div class="btn btn-outline-primary mx-3" type="submit">
+      <div *ngIf="!ifUser" class="btn btn-outline-primary mx-3" type="submit">
         <a routerLink="login" class="text-decoration-none text-reset"> LOGIN</a>
       </div>
+      <div *ngIf="ifUser" class="btn btn-outline-primary mx-3" type="submit">
+        <a routerLink="login" class="text-decoration-none text-reset"> LOG OUT</a>
+      </div> 
+      <div *ngIf="ifUser" class=" mx-3" type="submit">
+        <a routerLink="login" class="text-decoration-none text-reset text-uppercase fw-bold"> {{userData.username}}</a>
+      </div>
+      
       <!-- <div class="btn btn-outline-primary" type="submit">
         <a routerLink="signup" class="text-decoration-none text-reset">
           SIGNUP</a
