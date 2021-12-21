@@ -1,5 +1,9 @@
 <div class="card form">
-  <form class="card-body mx-auto" [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+  <form
+    class="card-body mx-auto"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+  >
     <img src="../../assets/logo1.jpg" class="" />
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -35,17 +39,17 @@
         formControlName="password"
       />
       <div
-      id="emailHelp"
-      class="form-text"
-      *ngIf="
-        !loginForm.controls['password'].valid &&
-        loginForm.controls['password']?.touched
-      "
-    >
-      Please enter a password
+        id="emailHelp"
+        class="form-text"
+        *ngIf="
+          !loginForm.controls['password'].valid &&
+          loginForm.controls['password']?.touched
+        "
+      >
+        Please enter a password
+      </div>
     </div>
-    </div>
-    
+
     <div class="mb-3 form-check">
       <input
         type="checkbox"
@@ -54,10 +58,14 @@
         name="check"
         formControlName="check"
       />
-     
+
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" >Submit</button>
+    <div><a routerLink="../signup"> register</a></div>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">
+      Submit
+    </button>
   </form>
 </div>
 <!-- <button (click)="click()" >check</button> -->

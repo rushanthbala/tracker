@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class SignupComponent implements OnInit {
     { "age": "below 30" },
     { "age": "above 30" }
   ];
-  users: any ={};
+  users: any = {};
+
   clicksub() {
     this.users = Object.assign(this.users, this.form.value);
     // console.log(this.users);
@@ -32,6 +34,8 @@ export class SignupComponent implements OnInit {
     this.form.reset();
   }
   addUser(user: []) {
+  const signup: string[] = ['/login'];
+
     var userss = [];
     if (localStorage.getItem('user')) {
       userss = JSON.parse(localStorage.getItem('user') || '{}');
@@ -39,10 +43,12 @@ export class SignupComponent implements OnInit {
     } else {
       userss = [user]
     }
-    localStorage.setItem('user',JSON.stringify(userss))
-  }
+    localStorage.setItem('user', JSON.stringify(userss))
+    this.router.navigate(signup);
 
-  constructor() { }
+  }
+  // ROUTER_DIRECTIVES
+  constructor(private router: Router) { }
 
 
   ngOnInit(): void {
