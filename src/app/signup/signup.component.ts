@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -8,29 +9,40 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  form =new FormGroup({
-    username: new FormControl(null,Validators.required),
+  form = new FormGroup({
+    username: new FormControl(null, Validators.required),
     password:new FormControl(null,[Validators.required,Validators.minLength(6)]),
     Cpassword:new FormControl(null,[Validators.required,Validators.minLength(6)]),
     phoneno:new FormControl(null,Validators.required),
     gender:new FormControl(null,Validators.required),
     age:new FormControl(null,Validators.required),
     address:new FormControl(null,Validators.required)
-
-
   })
-  agelist=[
-    {"age":"choose one"},
-    {"age":"below 30"},
-    {"age":"above 30"}
+  agelist = [
+    { "age": "choose one" },
+    { "age": "below 30" },
+    { "age": "above 30" }
   ];
-  clicksub(){
-    console.log(this.form.value);
+  users: any ={};
+  clicksub() {
+    this.users = Object.assign(this.users, this.form.value);
+    // console.log(this.users);
+    this.addUser(this.users)
     this.form.reset();
+  }
+  addUser(user: []) {
+    var userss = [];
+    if (localStorage.getItem('user')) {
+      userss = JSON.parse(localStorage.getItem('user') || '{}');
+      userss = [...userss, user]
+    } else {
+      userss = [user]
+    }
+    localStorage.setItem('user',JSON.stringify(userss))
   }
 
   constructor() { }
-  
+
 
   ngOnInit(): void {
   }
